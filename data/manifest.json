@@ -2,7 +2,7 @@
     "name": "Tabungan Modal Menikah",
     "short_name": "Tabungan Menikah",
     "description": "Aplikasi untuk mencatat tabungan modal menikah",
-    "start_url": "/index.html",
+    "start_url": "../index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",
