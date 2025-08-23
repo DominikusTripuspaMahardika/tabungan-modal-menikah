@@ -1,14 +1,14 @@
 const CACHE_NAME = "tabungan-v1";
 const urlsToCache = [
-    "/index.html",
-    "/app.html",
-    "/assets/css/index.css",
-    "/assets/css/style.css",
-    "/favicon/favicon.ico",
-    "/images/icon-192x192.png",
-    "/images/icon-512x512.png",
-    "/pwa/manifest.json",
-    "/pwa/service-worker.js"
+    "./index.html",
+    "./app.html",
+    "./assets/css/index.css",
+    "./assets/css/style.css",
+    "./favicon/favicon.ico",
+    "./images/icon-192x192.png",
+    "./images/icon-512x512.png",
+    "./pwa/manifest.json",
+    "./pwa/service-worker.js"
 ];
 
 // Install Service Worker
