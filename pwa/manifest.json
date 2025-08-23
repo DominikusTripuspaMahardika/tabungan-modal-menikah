@@ -1,7 +1,7 @@
 {
   "name": "Tabungan Modal Menikah",
   "short_name": "Tabungan",
-  "start_url": ./index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f5f7fa",
   "theme_color": "#f5f7fa",
