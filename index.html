@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Register</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="pwa/manifest.json">
+  <meta name="theme-color" content="#f5f7fa">
+</head>
+
+<body>
+  <!-- Modal Install -->  
+  <div id="installModal" class="install-modal">
+    <div class="install-content">
+      <h2>📱 Pasang Aplikasi</h2>
+      <p>Tambahkan <b>Tabungan Modal Menikah</b> ke layar utama untuk akses lebih cepat dan offline.</p>
+      <div class="install-actions">
+        <button id="installBtn">Install</button>
+        <button id="closeInstall">Nanti Saja</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-container">
+    <div class="form-box">
+      <h2 id="formTitle">Ayo Menabung!!</h2>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="form active">
+        <input type="text" id="loginUsername" placeholder="Username" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit">Masuk</button>
+        <p class="switch">Belum punya akun? <a href="#" id="showRegister">Daftar</a></p>
+      </form>
+
+      <!-- Register Form -->
+      <form id="registerForm" class="form">
+        <input type="text" id="regUsername" placeholder="Username" required>
+        <input type="password" id="regPassword" placeholder="Password" required>
+        <button type="submit">Daftar</button>
+        <p class="switch">Sudah punya akun? <a href="#" id="showLogin">Masuk</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/javascript/script.js" defer></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("pwa/service-worker.js")
+        .then(() => console.log("Service Worker registered"))
+        .catch(err => console.error("SW failed:", err));
+    }
+  </script>
+</body>
+
+</html>

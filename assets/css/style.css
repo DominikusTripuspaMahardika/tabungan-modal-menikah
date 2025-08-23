@@ -1,0 +1,216 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+/* Auth Container */
+.auth-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.form.active {
+  display: flex;
+}
+
+.form input {
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.form input:focus {
+  border-color: #2575fc;
+}
+
+.form button {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form button:hover {
+  background: #1b5edb;
+}
+
+.switch {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.switch a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Toast Notification - Top Center */
+.toast-container {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  z-index: 9999;
+}
+
+.toast {
+  min-width: 260px;
+  max-width: 340px;
+  text-align: center;
+  padding: 14px 18px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: slideDown 0.4s forwards, slideUp 0.4s forwards 3s;
+}
+
+.toast.success { background: #28a745; }
+.toast.error   { background: #dc3545; }
+.toast.info    { background: #2575fc; }
+
+/* Animasi masuk dari atas */
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animasi keluar naik ke atas */
+@keyframes slideUp {
+  to {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+/* Install Modal */
+.install-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+}
+
+.install-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  animation: slideDown 0.4s ease;
+}
+
+.install-content h2 {
+  margin-bottom: 0.8rem;
+  color: #2575fc;
+  font-size: 1.4rem;
+}
+
+.install-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.install-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.install-actions button {
+  flex: 1;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+#installBtn {
+  background: #2575fc;
+  color: white;
+}
+
+#installBtn:hover {
+  background: #1b5edb;
+  transform: scale(1.05);
+}
+
+#closeInstall {
+  background: #eee;
+  color: #333;
+}
+
+#closeInstall:hover {
+  background: #ddd;
+  transform: scale(1.05);
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

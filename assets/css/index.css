@@ -1,0 +1,281 @@
+/* === Global Style === */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+/* === Container === */
+.tabungan-modal-menikah-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 20px auto;        /* pusatkan horizontal */
+  padding: 0 20px;          /* beri jarak kiri-kanan */
+  box-sizing: border-box;   /* supaya padding tidak bikin geser */
+}
+
+/* === Form === */
+.tabungan-modal-menikah-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.tabungan-modal-menikah-form input,
+.tabungan-modal-menikah-form textarea,
+.tabungan-modal-menikah-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d0d6de;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: #fafbfc;
+  box-sizing: border-box;
+}
+
+/* Khusus input tanggal agar tidak terpotong */
+.tabungan-modal-menikah-form input[type="date"] {
+  width: 100%;
+  min-width: 0;
+}
+
+.tabungan-modal-menikah-form input:focus,
+.tabungan-modal-menikah-form textarea:focus,
+.tabungan-modal-menikah-form select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0,123,255,0.2);
+  outline: none;
+  background: #fff;
+}
+
+.tabungan-modal-menikah-btn {
+  grid-column: 1/-1;
+  padding: 14px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tabungan-modal-menikah-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #004095);
+  transform: translateY(-2px);
+}
+
+/* === Tabel === */
+.tabungan-modal-menikah-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tabungan-modal-menikah-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabungan-modal-menikah-table th {
+  background: #007bff;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.tabungan-modal-menikah-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e5e9f0;
+  transition: background 0.3s ease;
+}
+
+.tabungan-modal-menikah-table th,
+.tabungan-modal-menikah-table td {
+  white-space: nowrap;   /* cegah teks turun ke bawah */
+}
+
+.tabungan-modal-menikah-table th:nth-child(1),
+.tabungan-modal-menikah-table td:nth-child(1) { min-width: 100px; } /* Tanggal */
+.tabungan-modal-menikah-table th:nth-child(2),
+.tabungan-modal-menikah-table td:nth-child(2),
+.tabungan-modal-menikah-table th:nth-child(3),
+.tabungan-modal-menikah-table td:nth-child(3),
+.tabungan-modal-menikah-table th:nth-child(4),
+.tabungan-modal-menikah-table td:nth-child(4),
+.tabungan-modal-menikah-table th:nth-child(5),
+.tabungan-modal-menikah-table td:nth-child(5),
+.tabungan-modal-menikah-table th:nth-child(6),
+.tabungan-modal-menikah-table td:nth-child(6) { min-width: 120px; text-align: right; }
+
+.tabungan-modal-menikah-table th:nth-child(7),
+.tabungan-modal-menikah-table td:nth-child(7) { min-width: 200px; } /* Catatan */
+
+.tabungan-modal-menikah-table th:nth-child(8),
+.tabungan-modal-menikah-table td:nth-child(8) { min-width: 140px; } /* Aksi */
+
+.tabungan-modal-menikah-table tr:hover td {
+  background: #f8faff;
+}
+
+.tabungan-modal-menikah-blur {
+  filter: blur(7px);
+  transition: 0.3s;
+}
+
+/* === Actions === */
+.tabungan-modal-menikah-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tabungan-modal-menikah-actions button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: 18px;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.tabungan-modal-menikah-actions button:hover {
+  transform: scale(1.2);
+}
+
+.tabungan-modal-menikah-actions i {
+  font-size: 18px;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.tabungan-modal-menikah-actions i:hover {
+  transform: scale(1.3);
+}
+
+.tabungan-modal-menikah-actions .view { color: #17a2b8; }
+.tabungan-modal-menikah-actions .edit { color: #ffc107; }
+.tabungan-modal-menikah-actions .delete { color: #dc3545; }
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  h1 { font-size: 1.4rem; }
+  .tabungan-modal-menikah-form { grid-template-columns: 1fr; }
+  .tabungan-modal-menikah-btn { font-size: 14px; padding: 12px; }
+  .tabungan-modal-menikah-container { padding: 15px; }
+  .tabungan-modal-menikah-table th,
+  .tabungan-modal-menikah-table td { font-size: 13px; padding: 10px; }
+}
+
+/* === Modal Konfirmasi === */
+.tabungan-modal-menikah-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.tabungan-modal-menikah-modal-content {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  max-width: 350px;
+  text-align: center;
+  animation: fadeInScale 0.3s ease;
+}
+
+@keyframes fadeInScale {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.tabungan-modal-menikah-modal h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.tabungan-modal-menikah-modal-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tabungan-modal-menikah-modal-actions button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tabungan-modal-menikah-modal-actions .yes {
+  background: #dc3545;
+  color: #fff;
+}
+
+.tabungan-modal-menikah-modal-actions .yes:hover {
+  background: #b02a37;
+}
+
+.tabungan-modal-menikah-modal-actions .no {
+  background: #e9ecef;
+  color: #333;
+}
+
+.tabungan-modal-menikah-modal-actions .no:hover {
+  background: #d6d8db;
+}
+
+/* Floating Logout Bubble */
+.logout-bubble {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, crimson, darkred);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout-bubble:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+.logout-bubble:active {
+  transform: scale(0.95);
+}
+
+.logout-bubble i {
+  font-size: 1.5rem;
+}

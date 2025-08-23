@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabungan Modal Menikah</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="tabungan-modal-menikah-container">
+        <h1>💍 Tabungan Modal Menikah 💍</h1>
+        <button class="logout-bubble" id="logoutBtn"><i class="fas fa-right-from-bracket"></i></button>
+        <!-- Form Input -->
+        <form id="tabungan-modal-menikah-form" class="tabungan-modal-menikah-form">
+            <input type="date" id="tabungan-modal-menikah-tanggal" lang="id" placeholder="dd/mm/yyyy" required>
+            <input type="number" id="tabungan-modal-menikah-pemasukan" placeholder="Pemasukan (Rp)" required>
+            <input type="number" id="tabungan-modal-menikah-pengeluaran" placeholder="Pengeluaran (Rp)" required>
+            <input type="number" id="tabungan-modal-menikah-tabungan" placeholder="Tabungan (Rp)" required>
+            <input type="number" id="tabungan-modal-menikah-lainnya" placeholder="Lainnya (Rp)" required>
+            <textarea id="tabungan-modal-menikah-catatan" placeholder="Catatan Tabungan..." required></textarea>
+            <button type="submit" class="tabungan-modal-menikah-btn"> Simpan Data</button>
+        </form>
+
+        <!-- Tabel Data -->
+        <div class="tabungan-modal-menikah-table-wrapper">
+            <table class="tabungan-modal-menikah-table">
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Pemasukan</th>
+                        <th>Pengeluaran</th>
+                        <th>Tabungan</th>
+                        <th>Lainnya</th>
+                        <th>Sisahnya</th>
+                        <th>Catatan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="tabungan-modal-menikah-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Konfirmasi Hapus -->
+    <div id="tabungan-modal-menikah-confirm" class="tabungan-modal-menikah-modal">
+        <div class="tabungan-modal-menikah-modal-content">
+            <h3>Konfirmasi Hapus</h3>
+            <p>Apakah kamu yakin ingin menghapus data ini?</p>
+            <div class="tabungan-modal-menikah-modal-actions">
+                <button id="tabungan-modal-menikah-yes" class="yes">Hapus</button>
+                <button id="tabungan-modal-menikah-no" class="no">Batal</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/javascript/index.js"></script>
+    <script>
+        const logoutBtn = document.getElementById("logoutBtn");
+        logoutBtn.addEventListener("click", () => {
+            localStorage.removeItem("loggedInUser");
+            window.location.href = "index.html";
+        });
+
+        // Cegah masuk tanpa login
+        if (!localStorage.getItem("loggedInUser")) {
+            window.location.href = "index.html";
+        }
+
+    </script>
+</body>
+
+</html>
